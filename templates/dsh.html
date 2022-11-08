@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{{ title }}</title>
+    
+    <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
+    <meta name="author" content="">
+    
+    <meta name="msapplication-TileColor" content="#5bc0de" />
+    <meta name="msapplication-TileImage" content="static/component_dsh/assets/img/metis-tile.png" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.jqueryui.min.css"> 
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="static/component_dsh/assets/lib/bootstrap/css/bootstrap.css">
+    
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="static/component_dsh/assets/lib/font-awesome/css/font-awesome.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.jqueryui.min.css"> 
+    
+    <!-- Metis core stylesheet -->
+    <link rel="stylesheet" href="static/component_dsh/assets/css/main.css">
+    
+    <!-- metisMenu stylesheet -->
+    <link rel="stylesheet" href="static/component_dsh/assets/lib/metismenu/metisMenu.css">
+
+    <script src="https://kit.fontawesome.com/3792af060c.js" crossorigin="anonymous"></script>
+
+    <!-- onoffcanvas stylesheet -->
+    <link rel="stylesheet" href="static/component_dsh/assets/lib/onoffcanvas/onoffcanvas.css">
+    
+    <!-- animate.css stylesheet -->
+    <link rel="stylesheet" href="static/component_dsh/assets/lib/animate.css/animate.css">
+    <script>
+        less = {
+            env: "development",
+            relativeUrls: false,
+            rootpath: "static/component_dsh/assets/"
+        };
+    </script>
+    <link rel="stylesheet" href="static/component_dsh/assets/css/style-switcher.css"> 
+    <link rel="stylesheet/less" type="text/css" href="static/component_dsh/assets/less/theme.less">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
+
+    <script src="static/component_dsh/js/jquery.min.js" type="text/javascript"></script>
+    <script src="static/component_dsh/js/jquery.dataTables.min.js" type="text/javascript"></script> 
+
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet"> 
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet"> 
+    <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js" type="text/javascript"></script> 
+</head>
+
+<body class="  ">
+    <div class="bg-dark dk" id="wrap">
+        <div id="top" >
+            <!-- .navbar -->
+            <nav class="navbar navbar-static-top"  style="background-color: #800000;  height:50px; display:flex; flex-direction:row; justify-content:space-between;">
+                <header class="navbar-header">
+                    <h4 style="margin-left:5px; ">
+                        <i class="fa-solid fa-mug-hot"></i>&nbsp;
+                        <!-- <i class="fa-solid fa-staff-snake"></i>&nbsp; -->
+                        <span class="link-title" style="font-family:serif" >WAKANDA REPORT</span>
+                    </h4>
+                </header>
+
+                <div class="container" style=" display:flex; flex-direction:row; justify-content:flex-start; ">
+                    <div>
+                        <div class="btn-group">
+                            <form action="" method="POST">
+                                <button type="submit" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
+                                    class="btn btn-metis-1 btn-sm">
+                                    <i class="fa fa-power-off"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="btn-group">
+                            <a data-placement="bottom" data-original-title="Show / Hide Left" data-toggle="tooltip"
+                                class="btn btn-primary btn-sm toggle-left" id="menu-toggle">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>        
+        </div>
+        <!-- /#top -->
+        <div id="left" style="background-color: hsl(30, 5%, 16%)">
+            <div class="media user-media dker">
+                <div class="user-media-toggleHover">
+                    <span class="fa fa-user"></span>
+                </div>
+                <div class="user-wrapper" style="height: 100px; border-top: 9px solid  #1d1c1c; ">
+                    <a class="user-link" href="">
+                        <img class="media-object img-circle user-img" alt="User Picture" src="static/component_dsh/profile1.png" width="60px" height="60px" style="margin-top:20px; margin-left:80px">
+                        <!-- <span class="label label-danger user-label">16</span>  -->
+                    </a>
+            
+                    <div class="media-body" >
+                        <h5 class="media-heading mt-2" style="margin-top:25px; margin-left:15px; color:aliceblue">Archie</h5>
+                        <!-- <h5 class="media-body list-unstyled user-info">Position</h5> -->
+                        <ul class="list-unstyled user-info" style="margin-left: 13px; font-size: 12px;">
+                            <li>Admin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+         
+            <!-- #menu -->
+            <ul id="menu" class="dker" style="background-color: #1d1c1c; font-size:14px;" >
+                <li class="actives">
+                    <a href="#tes">
+                        <i class="fa fa-landmark"></i>
+                        <span class="link-title">&nbsp;&nbsp;Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="actives">
+                    <a href="#tes">
+                        <i class="fa fa-people-group"></i>
+                        <span class="link-title">&nbsp;&nbsp;Users</span>
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="{{ url_for('aduan') }}">
+                        <i class="fa fa-database"></i>
+                        <span class="link-title">&nbsp;&nbsp;Aduan</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#menu -->
+
+        <!-- /#left -->
+        <div id="content" style="min-height: 95vh; overflow:scroll">
+            <div class="outer" style="min-height: 95vh; overflow:scroll" >
+                <div style="line-height: 15px; border-bottom:5px solid rgb(39, 37, 37)">
+                   <h5>             
+                    {% block site %}
+                    {% endblock %}
+                    </h5> 
+                </div>
+                <div class="inner bg-light lter" style="overflow: auto">
+                    <div>
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>    
+        </div>    
+    </div>
+    <!-- /#wrap -->
+
+
+    <footer class="Footer" style=" background-color: hsl(0, 2%, 12%)">
+        <p>2022 &copy; Expert System Bot99 Corporation</p>
+    </footer>
+
+<!-- #helpModal -->
+    <div id="helpModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+  
+
+
+
+
+
+    
+    
+    
+
+
+
+   
+
+    <!--Bootstrap -->
+    <script src="static/component_dsh/assets/lib/bootstrap/js/bootstrap.js"></script>
+    <!-- MetisMenu -->
+    <script src="static/component_dsh/assets/lib/metismenu/metisMenu.js"></script>
+    <!-- onoffcanvas -->
+    <script src="static/component_dsh/assets/lib/onoffcanvas/onoffcanvas.js"></script>
+    <!-- Screenfull -->
+    <script src="static/component_dsh/assets/lib/screenfull/screenfull.js"></script>
+    
+    
+    <!-- Metis core scripts -->
+    <script src="static/component_dsh/assets/js/core.js"></script>
+    <!-- Metis demo scripts -->
+    <script src="static/component_dsh/assets/js/app.js"></script>
+    
+    
+    <script src="static/component_dsh/assets/js/style-switcher.js"></script>
+
+</body>
+
+</html>

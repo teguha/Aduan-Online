@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+    <head>
+    	<!-- meta charec set -->
+        <meta charset="utf-8">
+		<!-- Always force latest IE rendering engine or request Chrome Frame -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- Page Title -->
+        <title>{{title}}</title>		
+		<!-- Meta Description -->
+        <meta name="description" content="Blue One Page Creative HTML5 Template">
+        <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
+        <meta name="author" content="Muhammad Morshed">
+		<!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Google Font -->
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+		<!-- CSS
+		================================================== -->
+		<!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="static/component_idx/css/font-awesome.min.css">
+		<!-- Twitter Bootstrap css -->
+        <link rel="stylesheet" href="static/component_idx/css/bootstrap.min.css">
+		<!-- jquery.fancybox  -->
+        <link rel="stylesheet" href="static/component_idx/css/jquery.fancybox.css">
+		<!-- animate -->
+        <link rel="stylesheet" href="static/component_idx/css/animate.css">
+		<!-- Main Stylesheet -->
+        <link rel="stylesheet" href="static/component_idx/css/main.css">
+		<!-- media-queries -->
+        <link rel="stylesheet" href="static/component_idx/css/media-queries.css">
+
+		<!-- Modernizer Script for old Browsers -->
+        <script src="static/component_idx/"></script>
+
+    </head>
+	
+    <body id="body">
+	
+		<!-- preloader -->
+		<div id="preloader">
+			<img src="static/component_idx/img/preloader.gif" alt="Preloader">
+		</div>
+
+        <header id="navs" class="navbar-fixed-top navbar" style="background-color: #eb9a0f; height:70px; align-items: center;">
+            <div class="container">
+                <div class="navbar-header">
+					<!-- logo -->
+                    <a class="navbar-brand" href="#body">
+						<h4 style=" font-weight: bold; color:aliceblue;">
+							<span class="color:white">E-Report</span>
+						</h4>
+					</a>
+					<!-- /logo -->
+                </div>
+
+				<!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav" >
+                        <li class="current"><a href="#body">Home</a></li>
+                        <li><a href="#report">Report</a></li>
+                        <li><a href="#contact">Contact</a></li>
+						<li><a href="{{ url_for('login') }}">Login</a></li>
+                    </ul>
+                </nav>
+				<!-- /main nav -->
+				
+            </div>
+        </header>
+
+		
+		<section id="slider" >
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			
+				<!-- Indicators bullet -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				</ol>
+				<!-- End Indicators bullet -->				
+				
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+					<!-- single slide -->
+					<div class="item active" style="background-image: url(static/component_idx/img/banner.jpg);">
+						<div class="carousel-caption">
+							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated" style="font-size: 35px;">Selamat Datang di Website Pengaduan Negri <span class="color">Wakanda</span></h2>
+							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated" style="font-size: 20px;">Anda kurang nyaman dengan pelayanan di negri ini atau memiliki masalah dengan layanan publik di negri ini cukup adukan saja dengan menekan tombol sakti dibawah ini</h3>
+							<p data-wow-duration="1000ms" class="wow slideInRight animated">Kami siap membantu anda</p>
+							<button style="margin-top:40px; background-color: #eb9a0f; width:150px; height:50px; border-radius: 10px; font-size: 15px; color:rgb(255, 255, 255); font-weight: bold; border-color:#eb9a0f;" data-toggle="modal" data-target="#exampleModalCenter">Tombol Aduan</button>
+							
+							<ul class="social-links text-center">
+								<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				
+				</div>
+				<!-- End Wrapper for slides -->
+				
+			</div>
+		</section>
+		  
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document" >
+			<div class="modal-content" style="border-color: #eb9a0f; border:none; background-color: rgba(255, 255, 255, 0.90);">
+				<div class="modal-header" style="background-color: #eb9a0f; border-color: #eb9a0f; border-radius: 5px;">
+					<h5 class="modal-title"  id="exampleModalLongTitle" style="color:#fff; font-weight:bold">Report</h5>
+				</div>
+				<!-- <div class="alert alert-primary" role="alert">
+					{{ data }}
+				</div> -->
+				<div class="modal-body">
+					<form action="{{ url_for('report_send') }}" method="POST" enctype="multipart/form-data">
+						<div class="form-group row">
+						  <div class="col-sm-12">
+							<input type="text"  class="form-control" name="nama" id="nama" placeholder="Nama" autofocus required>
+						  </div>
+						</div>
+						<div class="form-group row">
+						  <div class="col-sm-12">
+							<input type="text" class="form-control" alpa_numeric  name="no_hp" id="no_hp" placeholder="No Handphone"required>
+						  </div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-12">
+							  <input type="text" class="form-control" name="aduan" id="aduan"  placeholder="Aduan" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-12">
+							  <label>Bukti aduan (Berupa Foto)</label>
+							  <input type="file" class="form-control"  name="bukti_aduan" id="bukti_aduan" required>
+							</div>
+						</div>  
+					</div>
+					<div class="modal-footer">
+						<button type="button"  data-dismiss="modal" style="background-color:rgb(182, 19, 19); color:#fff; width: 50px; border-radius: 5px; border-color: rgb(182, 19, 19); " >Batal</button>
+						<button type="submit"  style="background-color:rgb(12, 68, 132); border-radius: 5px; border-color:rgb(12, 68, 132);  ; color:#fff; width: 50px;">Kirim</button>
+					</form>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+
+		
+		<section id="contact" class="features">
+			<div class="container">
+				<div class="row">
+				
+					<div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+						<h2>Contact</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-phone fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Phone</h3>
+								<p>Wakanda Phone Center : 087262762621 </p>
+								<p>Dikelola langsung oleh pemerintahan negri wakanda , untuk masyarakat yang ingin mengadu cukup dengan cara mengclik tombol aduan , dan tidak perlu melakukan login ke sistem , login ke sistem hanya diperuntukan kepada pemerintah negri wakanda</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-mail-reply-all fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Email</h3>
+								<p>Wakanda Email Adress : wakandaKominfo@gmail.com </p>
+								<p>Dikelola langsung oleh pemerintahan negri wakanda , untuk masyarakat yang ingin mengadu cukup dengan cara mengclik tombol aduan , dan tidak perlu melakukan login ke sistem , login ke sistem hanya diperuntukan kepada pemerintah negri wakanda</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInRight" data-wow-duration="500ms"  data-wow-delay="900ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-mail-forward fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Consulting</h3>
+								<p>Dikelola langsung oleh pemerintahan negri wakanda , untuk masyarakat yang ingin mengadu cukup dengan cara mengclik tombol aduan , dan tidak perlu melakukan login ke sistem , login ke sistem hanya diperuntukan kepada pemerintah negri wakanda</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+				</div>
+			</div>
+		</section>
+		
+ 	
+		
+		<section id="report" class="team" style="height:100vh; display:flex; flex-wrap:wrap; overflow:auto;">
+			<div class="sec-title wow fadeInUp animated" data-wow-duration="700ms" style="text-align:center; width:100%;">
+				<h2 style="margin-top:10px;">Keluh Kesah Masyarakat Wakanda</h2>
+				<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+			</div>
+			<div class="container">
+				
+				{% for row in data %}
+				<div class="row" style="height:100vh; width: 100%; display:block; flex-direction:row; flex-wrap:wrap; overflow:hiden;">
+					<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+					<link rel="stylesheet" href="static/component_idx/css/card_style.css">
+					
+					<div id="container">	
+							
+						<div class="product-details" style="margin-top: 8px; overflow-y: auto; scroll-snap-align:start">	
+							<h1>{{ row.1 }}</h1>
+		
+							<p class="information" style="text-align: justify; margin-top:5px;">{{ row.3 }}</p>
+							<p style="margin-top:17px;">{{ row.5 }}</p>
+							<div style="text-align:center; margin-top:12px">
+								<span class="badge" style="background-color:rgb(6, 49, 98);">Terkirim</span>
+								<span class="badge" style="background-color:rgb(3, 94, 12);">Ditanggapi</span>
+								<span class="badge" style="background-color:rgb(161, 43, 20);">Ditolak</span>
+								<!-- <button class="btn">
+									<span class="price">$250</span>
+									<span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+									<span class="buy">Get now</span>
+								</button> -->
+							</div>
+							<p class="information" style="text-align: center; margin-top: 14px; color: #eb9a0f;">Klik gambar untuk melihat balasan admin</p>
+						</div>
+						<div class="product-image">
+							<img src="static/uploads/{{ row.4 }}" alt="">
+							<div class="info" style="overflow:auto">
+								<h3 style="color:#eb9a0f; margin-top: 5px; text-align:center;">Admin Wakanda</h3>
+								<ul style="padding: 10px;">
+									<p class="information" style="text-align: justify;">
+										{% if ( row.7 == None) : %}
+                          					
+                        				{% else : %}
+											{{ row.7 }}
+                        				{% endif %}
+									</p>
+									<p style="margin-top:17px; text-align: center;">
+										{% if ( row.9 == None) : %}
+                          					
+                        				{% else : %}
+											{{ row.9 }}
+                        				{% endif %}
+									</p>
+								</ul>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+					<!-- <div id="container">	
+							
+						<div class="product-details" style="margin-top: 8px; overflow-y: auto; scroll-snap-align:start">	
+							<h1>Jhon Doe</h1>
+		
+							<p class="information" style="text-align: justify;">"Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.</p>
+							<p style="margin-top:17px;">22/08/2022</p>
+							<div style="text-align:center; margin-top:12px">
+								<span class="badge" style="background-color:rgb(6, 49, 98);">Terkirim</span>
+								<span class="badge" style="background-color:rgb(3, 94, 12);">Ditanggapi</span>
+								<span class="badge" style="background-color:rgb(161, 43, 20);">Ditolak</span>
+
+							</div>
+							<p class="information" style="text-align: center; margin-top: 14px; color: #eb9a0f;">Klik gambar untuk melihat balasan admin</p>
+						</div>
+						<div class="product-image">
+							<img src="https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+							<div class="info" style="overflow:auto">
+								<h3 style="color:#eb9a0f; margin-top: 5px; text-align:center;"> Admin Wakanda</h3>
+								<ul style="padding: 10px;">
+									<p class="information" style="text-align: justify;">"Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.</p>
+									<p style="margin-top:17px; text-align: center;">22/08/2022</p>
+								</ul>
+							</div>
+						</div>
+					</div> -->
+
+					<!-- <div id="container">	
+							
+						<div class="product-details" style="margin-top: 8px; overflow-y: auto; scroll-snap-align:start">	
+							<h1>Jhon Doe</h1>
+		
+							<p class="information" style="text-align: justify;">"Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.</p>
+							<p style="margin-top:17px;">22/08/2022</p>
+							<div style="text-align:center; margin-top:12px">
+								<span class="badge" style="background-color:rgb(6, 49, 98);">Terkirim</span>
+								<span class="badge" style="background-color:rgb(3, 94, 12);">Ditanggapi</span>
+								<span class="badge" style="background-color:rgb(161, 43, 20);">Ditolak</span>
+
+							</div>
+							<p class="information" style="text-align: center; margin-top: 14px; color: #eb9a0f;">Klik gambar untuk melihat balasan admin</p>
+						</div>
+						<div class="product-image">
+							<img src="https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+							<div class="info" style="overflow:auto">
+								<h3 style="color:#eb9a0f; margin-top: 5px; text-align:center;"> Admin Wakanda</h3>
+								<ul style="padding: 10px;">
+									<p class="information" style="text-align: justify;">"Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Tree is what one need the most. Here is the correct tree which will enhance your Christmas.Let's spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.</p>
+									<p style="margin-top:17px; text-align: center;">22/08/2022</p>
+								</ul>
+							</div>
+						</div>
+					</div> -->
+
+
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Meet Our Team
+        ==================================== -->
+		
+		<!--
+        Some fun facts
+        ==================================== -->		
+		
+		<section id="facts" class="facts">
+			<div class="parallax-overlay">
+				<div class="container">
+					<div class="row number-counters">
+						
+						<div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
+							<h2>Wakanda Fun Facts</h2>
+							<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+						</div>
+						
+						<!-- first count item -->
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+							<div class="counters-item">
+								<i class="fa fa-clock-o fa-3x"></i>
+								<strong data-to="250000000">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>People</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+							<div class="counters-item">
+								<i class="fa fa-users fa-3x"></i>
+								<strong data-to="17600">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Lands</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+							<div class="counters-item">
+								<i class="fa fa-rocket fa-3x"></i>
+								<strong data-to="33">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p> Province</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+							<div class="counters-item">
+								<i class="fa fa-trophy fa-3x"></i>
+								<strong data-to="1">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Awards Won</p>
+							</div>
+						</div>
+						<!-- end first count item -->
+					</div>
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Some fun facts
+        ==================================== -->
+		
+		
+		<!--
+        Contact Us
+        ==================================== -->		
+		
+		
+        <!--
+        End Contact Us
+        ==================================== -->
+		
+		
+		<footer id="footer" class="footer">
+			<div class="container">
+				<div class="row">
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="footer-single">
+							<span style="font-size:20px; font-weight:bold">Wakanda Team</span>	
+							<p>eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="footer-single">
+							<h6>Subscribe </h6>
+							<form action="#" class="subscribe">
+								<input type="text" name="subscribe" id="subscribe">
+								<input type="submit" value="&#8594;" id="subs">
+							</form>
+							<p>eusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="footer-single">
+							<h6>Explore</h6>
+							<ul>
+								<li><a href="#">Inside Us</a></li>
+								<li><a href="#">Flickr</a></li>
+								<li><a href="#">Google</a></li>
+								<li><a href="#">Forum</a></li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+						<div class="footer-single">
+							<h6>Support</h6>
+							<ul>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Market Blog</a></li>
+								<li><a href="#">Help Center</a></li>
+								<li><a href="#">Pressroom</a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="copyright text-center">
+							Copyright © 2015 <a href="http://themefisher.com/">Themefisher</a>. All rights reserved. Designed & developed by <a href="http://themefisher.com/">Themefisher</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
+
+		<!-- Essential jQuery Plugins
+		================================================== -->
+		<!-- Main jQuery -->
+        <script src="static/component_idx/js/jquery-1.11.1.min.js"></script>
+		<!-- Single Page Nav -->
+        <script src="static/component_idx/js/jquery.singlePageNav.min.js"></script>
+		<!-- Twitter Bootstrap -->
+        <script src="static/component_idx/js/bootstrap.min.js"></script>
+		<!-- jquery.fancybox.pack -->
+        <script src="static/component_idx/js/jquery.fancybox.pack.js"></script>
+		<!-- jquery.mixitup.min -->
+        <script src="static/component_idx/js/jquery.mixitup.min.js"></script>
+		<!-- jquery.parallax -->
+        <script src="static/component_idx/js/jquery.parallax-1.1.3.js"></script>
+		<!-- jquery.countTo -->
+        <script src="static/component_idx/js/jquery-countTo.js"></script>
+		<!-- jquery.appear -->
+        <script src="static/component_idx/js/jquery.appear.js"></script>
+		<!-- Contact form validation -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+		<!-- Google Map -->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<!-- jquery easing -->
+        <script src="static/component_idx/js/jquery.easing.min.js"></script>
+		<!-- jquery easing -->
+        <script src="static/component_idx/js/wow.min.js"></script>
+		<!-- Custom Functions -->
+        <script src="static/component_idx/js/custom.js"></script>
+    </body>
+</html>
+
+<!-- <div style="height:30px;   ">
+	<h5 style="margin-left:15px; margin-top: 6px;">
+		<span class="badge" style="background-color:rgb(20, 86, 161);">Terkirim</span>
+		<<span class="badge" style="background-color:rgb(6, 158, 22);">Ditanggapi</span>
+		<span class="badge" style="background-color:rgb(161, 43, 20);">Ditolak</span> -->
+	<!-- </h5>
+</div>
+  <div class="col-sm-6 " style="margin-top: 15px;">
+	<form>
+		<div class="form-group row">
+			<label for="inputImage3" class="col-sm-2 col-form-label">Bukti Aduan</label>
+			<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputPassword3" placeholder="Bukti Aduan">
+			</div>
+		</div>  
+	</form>
+  </div>
+  <div class="col-sm-6" style="margin-top:15px;">
+	
+	<div class="form-group row">
+		<label for="inputName" class="col-sm-2 col-form-label">Name</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputEmail3" placeholder="Nama" autofocus>
+		</div>
+		</div>
+		<div class="form-group row">
+		<label for="inputPhone" class="col-sm-2 col-form-label">Aduan</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputPassword3" placeholder="Aduan">
+		</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputReport" class="col-sm-2 col-form-label">Tanggapan </label>
+			<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputPassword3" placeholder="Tanggapan">
+		</div>
+	</div> --> 
