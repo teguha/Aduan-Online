@@ -2,10 +2,10 @@
 {% block site %}
   <h4><i class="fa fa-database"></i>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-  Disease</h4>
+  Aduan</h4>
   {% endblock%}
   
-  {% block content %}
+{% block content %}
   <div style="height: 578px">
     <div style=" float: right; margin-right:5px; margin-bottom:20px">
       <!-- <button type="button" class="btn btn-sm" style="background-color:green; color:aliceblue; width:80px" id="tambah">
@@ -86,7 +86,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="col-sm-12">
-                        <input type="text" style="overflow-x:scroll" class="form-control" name="aduan" id="aduan"  placeholder="Aduan" readonly value="{{ row.3 }}">
+                        <textarea style="overflow-x:scroll" class="form-control" name="aduan" id="aduan" placeholder="Aduan" readonly >{{ row.3 }}</textarea> 
                       </div>
                     </div>
                     <div class="form-group row">
@@ -137,7 +137,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="col-sm-12">
-                        <input type="text" style="overflow-x:scroll" class="form-control" name="aduan" id="aduan" id="inputPassword3" placeholder="Aduan" readonly value="{{ row.3 }}">
+                        <textarea style="overflow-x:scroll" class="form-control" name="aduan" id="aduan" placeholder="Aduan" readonly >{{ row.3 }}</textarea> 
                       </div>
                     </div>
                     <div class="form-group row">
